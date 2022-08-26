@@ -1,3 +1,6 @@
+import 'package:emergency_access/screens/home_screen.dart';
+import 'package:emergency_access/screens/profile_screen.dart';
+import 'package:emergency_access/screens/qr_screen.dart';
 import 'package:emergency_access/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +11,12 @@ class RouteGenerator {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => const SplashScreen());
+      case '/profile_screen':
+        return MaterialPageRoute(builder: (_) => const ProfileScreen());
+      case '/home_screen':
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case '/Qr_screen':
+        return MaterialPageRoute(builder: (_) => const QrScreen());
 
       /* case '/tasting_details':
         return MaterialPageRoute(

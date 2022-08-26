@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
 
+import 'home_screen.dart';
+
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -15,7 +17,7 @@ class SplashScreen extends StatelessWidget {
         duration: 2000,
         splash: Image.asset('assets/images/logo_with_name.png'),
         splashIconSize: 200.h,
-        nextScreen: const ProfileScreen(),
+        nextScreen: const HomeScreen(),
         animationDuration: const Duration(milliseconds: 2000),
         splashTransition: SplashTransition.fadeTransition,
         pageTransitionType: PageTransitionType.bottomToTop,

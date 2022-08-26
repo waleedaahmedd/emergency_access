@@ -11,7 +11,13 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  TextEditingController _nameController = TextEditingController();
+  TextEditingController _firstNameController = TextEditingController();
+  TextEditingController _lastNameController = TextEditingController();
+  TextEditingController _familyMedicalController = TextEditingController();
+  TextEditingController _ageController = TextEditingController();
+  TextEditingController _dieaseController = TextEditingController();
+  TextEditingController _emergencyNumberController = TextEditingController();
+  TextEditingController _emergencyContactController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +26,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
         floatingActionButton: FloatingActionButton.extended(
           backgroundColor: CustomColors.red,
           icon: const Icon(Icons.qr_code),
-          onPressed: () {},
-          label: const Text('Generate QR'),
+          onPressed: () {
+            Navigator.of(context)
+                .pushNamed('/Qr_screen');
+          },
+          label:  Text('Generate QR',style: TextStyle(fontSize: 18.sp),),
         ),
         appBar: AppBar(
             centerTitle: true,
             title: const Text(
-              'Welcome to Emergency Access',
+              'Create Emergency Profile',
               style: TextStyle(color: Colors.white),
             ),
             shape: const RoundedRectangleBorder(
@@ -55,7 +64,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: Text(
                           'Please Fill Below Form to Generate QR',
                           style: TextStyle(
-                              fontSize: 20.sp, fontWeight: FontWeight.w500),
+                              fontSize: 25.sp, fontWeight: FontWeight.w500,color: CustomColors.red),
                         ),
                       ),
                     ],
@@ -64,23 +73,127 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Card(
                   shadowColor: CustomColors.blue,
                   elevation: 10,
+                  shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    side: const BorderSide(
+                      color: CustomColors.red,
+                      width: 1.0,
+                    ),),
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
                         TextField(
-                          controller: _nameController,
-                          decoration: InputDecoration(
+                          style: TextStyle(fontSize: 18.sp,color: CustomColors.red),
+                          controller: _firstNameController,
+                          decoration: const InputDecoration(
                               filled: true,
                               fillColor: Colors.white,
-                              border: const OutlineInputBorder(),
-                              suffixIcon: const Icon(
+                              border: OutlineInputBorder(),
+                             /* suffixIcon: const Icon(
                                 Icons.perm_identity,
-                              ),
-                              labelText: 'Your Name',
-                              labelStyle: TextStyle(fontSize: 14.sp)),
+                              ),*/
+                              labelText: 'First Name',
+                              /*labelStyle: TextStyle(fontSize: 14.sp)*/),
                         ),
                         SizedBox(
+                          height: 20.h,
+                        ),
+                        TextField(
+                          style: TextStyle(fontSize: 18.sp,color: CustomColors.red),
+                          controller: _lastNameController,
+                          decoration: const InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(),
+                          /*  suffixIcon: Icon(
+                              Icons.perm_identity,
+                            ),*/
+                            labelText: 'Last Name',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                        TextField(
+                          style: TextStyle(fontSize: 18.sp,color: CustomColors.red),
+                          controller: _emergencyNumberController,
+                          decoration: const InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(),
+                          /*  suffixIcon: Icon(
+                              Icons.perm_identity,
+                            ),*/
+                            labelText: 'Emergency Contact Number',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                        TextField(
+                          style: TextStyle(fontSize: 18.sp,color: CustomColors.red),
+                          controller: _emergencyContactController,
+                          decoration: const InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(),
+                           /* suffixIcon: Icon(
+                              Icons.perm_identity,
+                            ),*/
+                            labelText: 'Emergency Contact Name',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                        TextField(
+                          style: TextStyle(fontSize: 18.sp,color: CustomColors.red),
+                          controller: _ageController,
+                          decoration: const InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(),
+                           /* suffixIcon: Icon(
+                              Icons.perm_identity,
+                            ),*/
+                            labelText: 'Age',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                        TextField(
+                          style: TextStyle(fontSize: 18.sp,color: CustomColors.red),
+                          controller: _dieaseController,
+                          decoration: const InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(),
+                           /* suffixIcon: Icon(
+                              Icons.perm_identity,
+                            ),*/
+                            labelText: 'Disease (If Any)',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                        TextField(
+                          style: TextStyle(fontSize: 18.sp,color: CustomColors.red),
+                          controller: _familyMedicalController,
+                          decoration: const InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(),
+                           /* suffixIcon: Icon(
+                              Icons.perm_identity,
+                            ),*/
+                            labelText: 'Family Medical History (If Any)',
+                          ),
+                        ),
+
+                      /*  SizedBox(
                           height: 20.h,
                         ),
                         TextField(
@@ -97,70 +210,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         SizedBox(
                           height: 20.h,
-                        ),
-                        TextField(
-                          controller: _nameController,
-                          decoration: const InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: OutlineInputBorder(),
-                            suffixIcon: Icon(
-                              Icons.perm_identity,
-                            ),
-                            hintText: 'Your Name',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20.h,
-                        ),
-                        TextField(
-                          controller: _nameController,
-                          decoration: const InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: OutlineInputBorder(),
-                            suffixIcon: Icon(
-                              Icons.perm_identity,
-                            ),
-                            hintText: 'Your Name',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20.h,
-                        ),
-                        TextField(
-                          controller: _nameController,
-                          decoration: const InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: OutlineInputBorder(),
-                            suffixIcon: Icon(
-                              Icons.perm_identity,
-                            ),
-                            hintText: 'Your Name',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20.h,
-                        ),
-                        TextField(
-                          controller: _nameController,
-                          decoration: const InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: OutlineInputBorder(),
-                            suffixIcon: Icon(
-                              Icons.perm_identity,
-                            ),
-                            hintText: 'Your Name',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20.h,
-                        )
+                        )*/
                       ],
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 50.h,
                 ),
               ],
             ),

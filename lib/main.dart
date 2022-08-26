@@ -59,12 +59,12 @@ class MyApp extends StatelessWidget {
                 focusColor: CustomColors.blue,
                 hintStyle: TextStyle(
                     color: Colors.grey,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w500),
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w300),
                 labelStyle: TextStyle(
                     color: CustomColors.blue,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w500),
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w400),
                 focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(color: CustomColors.blue)),
               ),
