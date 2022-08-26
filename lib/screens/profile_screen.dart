@@ -19,8 +19,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: Scaffold(
         floatingActionButton: FloatingActionButton.extended(
           backgroundColor: CustomColors.red,
-           icon: const Icon(Icons.qr_code),
-           onPressed: () {  }, label: const Text('Generate QR'),
+          icon: const Icon(Icons.qr_code),
+          onPressed: () {},
+          label: const Text('Generate QR'),
         ),
         appBar: AppBar(
             centerTitle: true,
@@ -39,11 +40,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only( top: 20, bottom: 10),
-                  child: Text(
-                    'Please Fill Below Form to Generate QR',
-                    style:
-                        TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w500),
+                  padding: const EdgeInsets.only(top: 20, bottom: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/logo.png',
+                        height: 50.h,
+                      ),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      Flexible(
+                        child: Text(
+                          'Please Fill Below Form to Generate QR',
+                          style: TextStyle(
+                              fontSize: 20.sp, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Card(
@@ -55,16 +70,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         TextField(
                           controller: _nameController,
-                          decoration:  InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: const OutlineInputBorder(),
-                            suffixIcon: const Icon(
-                              Icons.perm_identity,
-                            ),
-                            labelText: 'Your Name',
-                            labelStyle: TextStyle(fontSize: 14.sp)
-                          ),
+                          decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: const OutlineInputBorder(),
+                              suffixIcon: const Icon(
+                                Icons.perm_identity,
+                              ),
+                              labelText: 'Your Name',
+                              labelStyle: TextStyle(fontSize: 14.sp)),
                         ),
                         SizedBox(
                           height: 20.h,
