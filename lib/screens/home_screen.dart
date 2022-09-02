@@ -53,9 +53,9 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(20),
                     child: Row(
                       children: [
-                        Icon(Icons.person_outline,size: 70.h,color: CustomColors.red,),
+                        Icon(Icons.person_outline,size: 30.h,color: CustomColors.red,),
                         SizedBox(width: 10.w,),
-                        Flexible(child: Text('Create Emergency Profile',style: TextStyle(fontSize: 25.sp,color: CustomColors.red),)),
+                        Flexible(child: Text('Create Emergency Profile',style: TextStyle(fontSize: 18.sp,color: CustomColors.red),)),
                       ],
                     ),
                   )
@@ -83,9 +83,9 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(20),
                       child: Row(
                         children: [
-                          Icon(Icons.qr_code,size: 70.h,color: CustomColors.red,),
+                          Icon(Icons.qr_code,size: 30.h,color: CustomColors.red,),
                           SizedBox(width: 10.w,),
-                          Flexible(child: Text('View Emergency QR Code',style: TextStyle(fontSize: 25.sp, color: CustomColors.red),)),
+                          Flexible(child: Text('View Emergency QR Code',style: TextStyle(fontSize: 18.sp, color: CustomColors.red),)),
                         ],
                       ),
                     )
